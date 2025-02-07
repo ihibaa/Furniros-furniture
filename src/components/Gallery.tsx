@@ -11,16 +11,16 @@ const Gallery = () => {
       {/* Parent container for the gallery */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-4">
         {/* Image 1 */}
-        <div className="w-[260px]  left-[40] bg-black h-auto">
+        <div className="w-[260px]  left-[40%] bg-black h-[300px]">
           <img
             src="g1.jpg"
             alt="img1"
-            className="w-[260px] h-auto transition-transform  duration-300 hover:scale-105"
+            className="w-[260px] h-[300px] transition-transform  duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 2 */}
-        <div className="w-full h-auto">
+        <div className="w-[200] h-auto">
           <img
             src="g2.jpg"
             alt="img2"

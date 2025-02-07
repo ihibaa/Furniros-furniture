@@ -5,7 +5,7 @@ import Link from "next/link";
 import Container from "./Container";
 import Logo from "./Logo";
 import SearchInput from "./SearchInput";
-import { HiMenuAlt2 } from "react-icons/hi";
+import { HiMenuAlt2, HiX } from "react-icons/hi"; // HiX for close icon
 import { MdOutlinePerson2, MdOutlineShoppingCart } from "react-icons/md";
 import { GoHeart } from "react-icons/go";
 
@@ -75,21 +75,24 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCart }) => {
         </div>
 
         {/* Menu Toggle (Visible only on Mobile) */}
-        <HiMenuAlt2
-          className="inline-flex md:hidden cursor-pointer text-2xl hover:text-brown"
+        <button
           onClick={toggleMenu}
-        />
+          className="inline-flex md:hidden cursor-pointer text-2xl hover:text-brown"
+          aria-label="Toggle Menu"
+        >
+          {isMenuOpen ? <HiX /> : <HiMenuAlt2 />}
+        </button>
       </Container>
 
-     
+      {/* Mobile Menu (Visible only on Mobile) */}
       {isMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-white shadow-lg p-4 flex flex-col items-start gap-4 md:hidden z-40">
+        <div className="fixed top-20 left-0 w-full bg-white shadow-lg p-4 flex flex-col items-start gap-4 md:hidden z-40">
           {navBarList.map((item) => (
             <Link
               key={item.title}
               href={item.link}
-              className="text-lg text-gray-700 font-medium hover:text-brown transition-colors duration-300"
-              onClick={toggleMenu} 
+              className="text-lg text-gray-700 font-medium hover:text-brown transition-colors duration-300 w-full"
+              onClick={toggleMenu} // Close menu on link click
             >
               {item.title}
             </Link>
