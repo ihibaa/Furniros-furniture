@@ -2,27 +2,16 @@
 
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Define the Product interface
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-  image: string;
-}
-
-// Define the WishlistContext type
 interface WishlistContextType {
-  wishlist: Product[]; // Array of product objects
-  addToWishlist: (product: Product) => void;
+  wishlist: number[]; // Array of product IDs
+  addToWishlist: (productId: number) => void;
   removeFromWishlist: (productId: number) => void;
 }
 
-// Create the context
 const WishlistContext = createContext<WishlistContextType | undefined>(undefined);
 
-// Create the provider
 export const WishlistProvider = ({ children }: { children: React.ReactNode }) => {
-  const [wishlist, setWishlist] = useState<Product[]>([]);
+  const [wishlist, setWishlist] = useState<number[]>([]);
 
   // Load wishlist from localStorage on initial render
   useEffect(() => {
@@ -37,16 +26,14 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
     localStorage.setItem("wishlist", JSON.stringify(wishlist));
   }, [wishlist]);
 
-  // Add a product to the wishlist
-  const addToWishlist = (product: Product) => {
-    if (!wishlist.some((item) => item.id === product.id)) {
-      setWishlist((prev) => [...prev, product]);
+  const addToWishlist = (productId: number) => {
+    if (!wishlist.includes(productId)) {
+      setWishlist((prev) => [...prev, productId]);
     }
   };
 
-  // Remove a product from the wishlist
   const removeFromWishlist = (productId: number) => {
-    setWishlist((prev) => prev.filter((item) => item.id !== productId));
+    setWishlist((prev) => prev.filter((id) => id !== productId));
   };
 
   return (
@@ -56,7 +43,6 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
   );
 };
 
-// Custom hook to use the context
 export const useWishlist = () => {
   const context = useContext(WishlistContext);
   if (!context) {

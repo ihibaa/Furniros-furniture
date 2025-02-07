@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import ReviewPage from "@/components/Review";
 import ProductOptions from "@/components/ProductOptions"; // Import the Client Component
-import OurProduct from "@/components/Ourproduct";
 
 const sanity = createClient({
   projectId: "rt0teuto",
@@ -124,7 +123,6 @@ export default async function ProductPage({ params }: { params: { id: string } }
       <div>
         <h1  className="font-bold text-black  text-2xl mt-10 text-center"> Realates Products</h1>
         <div  className="mt-10">
-        <OurProduct addToCart={addToCart} />
         </div>
 
       </div>
