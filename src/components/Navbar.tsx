@@ -14,8 +14,7 @@ const navBarList = [
   { title: "Shop", link: "/shop" },
   { title: "Contact", link: "/contact" },
   { title: "Blog", link: "/blog" },
-  { title: 'signIn', link: '/signin' },
-  
+  { title: "Sign In", link: "/signin" },
 ];
 
 type NavbarProps = {
@@ -27,15 +26,15 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCart }) => {
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
-    
   };
 
   return (
     <header className="w-full h-20 bg-accentWhite border-b-[1px] border-b-white fixed top-0 left-0 z-50">
       <Container className="h-full flex items-center justify-between gap-5 lg:gap-10">
+        {/* Logo */}
         <Logo />
 
-   
+        {/* Navigation Links (Hidden on Mobile) */}
         <div className="hidden md:flex items-center gap-7">
           {navBarList.map((item) => (
             <Link
@@ -48,34 +47,41 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCart }) => {
           ))}
         </div>
 
-        
-        <div className="flex items-center gap-10">
-          
+        {/* Icons and Search Input */}
+        <div className="flex items-center gap-4 sm:gap-6 md:gap-10">
+          {/* Account Icon */}
           <Link href="/account">
-            <MdOutlinePerson2 className="text-black text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
+            <MdOutlinePerson2 className="text-black text-2xl sm:text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
           </Link>
-          <SearchInput />
-         
+
+          {/* Search Input (Hidden on Mobile) */}
+          <div className="hidden md:block">
+            <SearchInput />
+          </div>
+
+          {/* Wishlist Icon */}
           <Link href="/wishlist">
-            <GoHeart className="text-black text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
+            <GoHeart className="text-black text-2xl sm:text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
           </Link>
-        
+
+          {/* Cart Icon */}
           <button
             onClick={toggleCart}
             className="relative"
             aria-label="View Cart"
           >
-            <MdOutlineShoppingCart className="text-black text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
+            <MdOutlineShoppingCart className="text-black text-2xl sm:text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
           </button>
         </div>
 
-        {/* Menu Toggle */}
+        {/* Menu Toggle (Visible only on Mobile) */}
         <HiMenuAlt2
           className="inline-flex md:hidden cursor-pointer text-2xl hover:text-brown"
           onClick={toggleMenu}
         />
       </Container>
-      
+
+     
       {isMenuOpen && (
         <div className="absolute top-20 left-0 w-full bg-white shadow-lg p-4 flex flex-col items-start gap-4 md:hidden z-40">
           {navBarList.map((item) => (
@@ -83,6 +89,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCart }) => {
               key={item.title}
               href={item.link}
               className="text-lg text-gray-700 font-medium hover:text-brown transition-colors duration-300"
+              onClick={toggleMenu} 
             >
               {item.title}
             </Link>
@@ -92,5 +99,5 @@ const Navbar: React.FC<NavbarProps> = ({ toggleCart }) => {
     </header>
   );
 };
-{/*final*/}
+
 export default Navbar;

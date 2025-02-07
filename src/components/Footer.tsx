@@ -29,22 +29,23 @@ const Footer = () => {
   return (
     <footer className="bg-accentWhite text-gray-800 py-10">
       <Container>
-        <div className="flex flex-wrap justify-between max-w-screen-xl mx-auto gap-10">
-       
-          <div className="min-w-[200px] w-full sm:w-auto">
-            <h3 className="text-black text-2xl font-bold mb-10">Funiro.</h3>
+        {/* Footer Content */}
+        <div className="flex flex-col sm:flex-row flex-wrap justify-between gap-8 sm:gap-10">
+          {/* Company Info */}
+          <div className="w-full sm:w-auto">
+            <h3 className="text-black text-2xl font-bold mb-6 sm:mb-10">Funiro.</h3>
             <address className="text-sm not-italic">
               400 University Drive Suite 200 Coral <br /> Gables, <br /> FL 33134 USA
             </address>
           </div>
 
-         
+          {/* Links and Help Sections */}
           {footerData.map((item) => (
             <div
               key={item._id}
-              className="flex flex-col items-start min-w-[200px] w-full sm:w-auto"
+              className="w-full sm:w-auto"
             >
-              <h3 className="text-gray-400 hover:text-gray-500 text-lg font-semibold mb-10">
+              <h3 className="text-gray-400 hover:text-gray-500 text-lg font-semibold mb-6 sm:mb-10">
                 {item.title}
               </h3>
               <div className="flex flex-col space-y-2">
@@ -63,18 +64,18 @@ const Footer = () => {
             </div>
           ))}
 
-       
-          <div className="min-w-[200px] w-full sm:w-auto">
-            <h3 className="text-gray-400 hover:text-gray-500 text-lg font-semibold mb-10">Newsletter</h3>
-            <form className="flex items-center w-full">
+          {/* Newsletter Section */}
+          <div className="w-full sm:w-auto">
+            <h3 className="text-gray-400 hover:text-gray-500 text-lg font-semibold mb-6 sm:mb-10">Newsletter</h3>
+            <form className="flex flex-col sm:flex-row items-center gap-2 w-full">
               <input
                 type="email"
                 placeholder="Enter Your Email Address"
-                className="underline rounded-l px-3 py-2 text-sm focus:outline-none w-full sm:w-auto"
+                className="underline rounded px-3 py-2 text-sm focus:outline-none w-full sm:w-64"
               />
               <button
                 type="submit"
-                className="bg-accentWhite text-black underline px-5 py-2 rounded-r text-sm hover:bg-black hover:text-white 800 transition"
+                className="bg-accentWhite text-black underline px-5 py-2 rounded text-sm hover:bg-black hover:text-white transition w-full sm:w-auto"
               >
                 Subscribe
               </button>
@@ -82,9 +83,9 @@ const Footer = () => {
           </div>
         </div>
 
-      
-        <div className="border-t border-gray-300 mt-10 pt-5 text-center">
-          <p className="text-sm text-gray-600 text-start font-semibold">2023 Funiro. All rights reserved</p>
+        {/* Copyright Section */}
+        <div className="border-t border-gray-300 mt-10 pt-5 text-center sm:text-start">
+          <p className="text-sm text-gray-600 font-semibold">2023 Funiro. All rights reserved</p>
         </div>
       </Container>
     </footer>

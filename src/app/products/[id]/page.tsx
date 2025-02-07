@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import ReviewPage from "@/components/Review";
 import ProductOptions from "@/components/ProductOptions"; // Import the Client Component
+import OurProduct from "@/components/Ourproduct";
 
 const sanity = createClient({
   projectId: "rt0teuto",
@@ -33,6 +34,10 @@ export default async function ProductPage({ params }: { params: { id: string } }
 
   if (!product) {
     return <div>Product not found</div>;
+  }
+
+  function addToCart(product: { id: number; name: string; description: string; price: number; formattedPrice: string; originalPrice: string; image: string; quantity: number; discount: boolean; discounts: boolean; isNew: boolean; } | { id: number; name: string; description: string; price: number; formattedPrice: string; image: string; quantity: number; discount: boolean; discounts: boolean; isNew: boolean; originalPrice?: undefined; }): void {
+    throw new Error("Function not implemented.");
   }
 
   return (
@@ -114,6 +119,14 @@ export default async function ProductPage({ params }: { params: { id: string } }
         <Link href="/faqs">
           <button className="font-bold text-3xl text-black">FAQs</button>
         </Link>
+      </div>
+
+      <div>
+        <h1  className="font-bold text-black  text-2xl mt-10 text-center"> Realates Products</h1>
+        <div  className="mt-10">
+        <OurProduct addToCart={addToCart} />
+        </div>
+
       </div>
     </div>
   );

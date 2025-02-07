@@ -25,7 +25,8 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
     <header className="w-full h-20 bg-accentWhite border-b-[1px] border-b-white fixed top-0 left-0 z-50">
       <Container className="h-full flex items-center justify-between gap-5 lg:gap-10">
         <Logo />
- 
+
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-7">
           {navBarList.map((item) => (
             <Link
@@ -38,15 +39,19 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
           ))}
         </nav>
 
-        <div className="flex items-center gap-10">
+        {/* Icons and Search Input */}
+        <div className="flex items-center gap-5 md:gap-10">
           <Link href="/account" aria-label="Account">
-            <MdOutlinePerson2 className="text-black text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
+            <MdOutlinePerson2 className="text-black text-2xl md:text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
           </Link>
 
-          <SearchInput />
+          {/* Hide Search Input on Mobile */}
+          <div className="hidden md:block">
+            <SearchInput />
+          </div>
 
-          <Link href="/wishlist" aria-label="Blog">
-            <GoHeart className="text-black text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
+          <Link href="/wishlist" aria-label="Wishlist">
+            <GoHeart className="text-black text-2xl md:text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
           </Link>
 
           <button
@@ -55,11 +60,11 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
             className="text-lg"
             aria-label="View Cart"
           >
-            <MdOutlineShoppingCart className="text-black text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
+            <MdOutlineShoppingCart className="text-black text-2xl md:text-3xl cursor-pointer hover:text-brown transition-colors duration-300" />
           </button>
         </div>
 
-        
+        {/* Mobile Menu Button */}
         <button
           onClick={toggleMenu}
           aria-label="Toggle Menu"
@@ -69,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ toggleCart }) => {
         </button>
       </Container>
 
-     
+      {/* Mobile Navigation Menu */}
       {isMenuOpen && (
         <div className="absolute top-20 left-0 w-full bg-white shadow-lg p-4 flex flex-col items-start gap-4 md:hidden z-40">
           {navBarList.map((item) => (

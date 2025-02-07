@@ -24,13 +24,13 @@ const ImgSlider = () => {
   };
 
   return (
-    <div className="slider-container w-full h-[100vh] bg-[#f8f8f8] flex items-center justify-between relative overflow-hidden px-10">
-     
-      <div className="text-container w-1/3 p-8 flex-shrink-0">
-        <h2 className="text-4xl font-bold mb-4">
+    <div className="slider-container mt-10 w-full h-[100vh] bg-[#f8f8f8] flex flex-col md:flex-row items-center justify-between relative overflow-hidden px-4 md:px-10">
+      {/* Text Container */}
+      <div className="text-container w-full md:w-1/3 p-4 md:p-8 flex-shrink-0 text-center md:text-left">
+        <h2 className="text-2xl md:text-4xl font-bold mb-4">
           50+ Beautiful rooms inspiration
         </h2>
-        <p className="text-lg mb-6 text-gray-600">
+        <p className="text-base md:text-lg mb-6 text-gray-600">
           Our designer already made a lot of beautiful prototypes of rooms that
           inspire you.
         </p>
@@ -39,8 +39,8 @@ const ImgSlider = () => {
         </button>
       </div>
 
-    
-      <div className="image-container w-2/3 relative flex items-center justify-center overflow-hidden">
+      {/* Image Container */}
+      <div className="image-container w-full md:w-2/3 relative flex items-center justify-center overflow-hidden">
         <div
           className="image-wrapper flex transition-transform duration-700 ease-in-out"
           style={{
@@ -55,21 +55,22 @@ const ImgSlider = () => {
               <img
                 src={image.src}
                 alt={image.title}
-                className="w-[40vw] h-[80vh] object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
+                className="w-[80vw] md:w-[40vw] h-[50vh] md:h-[80vh] object-cover rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
               />
-              <div className="absolute bottom-10 left-10 bg-white p-4 rounded-lg shadow-lg">
-                <p className="text-sm text-gray-500 mb-1">{`0${index + 1} — ${image.subtitle}`}</p>
-                <h3 className="text-2xl font-semibold">{image.title}</h3>
+              <div className="absolute bottom-5 md:bottom-10 left-5 md:left-10 bg-white p-2 md:p-4 rounded-lg shadow-lg">
+                <p className="text-xs md:text-sm text-gray-500 mb-1">{`0${index + 1} — ${image.subtitle}`}</p>
+                <h3 className="text-lg md:text-2xl font-semibold">{image.title}</h3>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="dots absolute bottom-5 flex justify-center space-x-3">
+        {/* Dots Navigation */}
+        <div className="dots absolute bottom-2 md:bottom-5 flex justify-center space-x-3">
           {images.map((_, index) => (
             <div
               key={index}
-              className={`dot w-3 h-3 rounded-full ${
+              className={`dot w-2 h-2 md:w-3 md:h-3 rounded-full ${
                 index === currentIndex
                   ? "bg-yellow-500"
                   : "bg-gray-400 hover:bg-gray-500"
@@ -80,14 +81,15 @@ const ImgSlider = () => {
         </div>
       </div>
 
+      {/* Navigation Buttons */}
       <button
-        className="prev-button absolute left-5 bg-black/30 text-white p-3 rounded-full hover:bg-black/50"
+        className="prev-button absolute left-2 md:left-5 bg-black/30 text-white p-2 md:p-3 rounded-full hover:bg-black/50"
         onClick={prevSlide}
       >
         &#x3c;
       </button>
       <button
-        className="next-button absolute right-5 bg-black/30 text-white p-3 rounded-full hover:bg-black/50"
+        className="next-button absolute right-2 md:right-5 bg-black/30 text-white p-2 md:p-3 rounded-full hover:bg-black/50"
         onClick={nextSlide}
       >
         &#x3e;

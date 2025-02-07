@@ -9,85 +9,85 @@ const Gallery = () => {
       <h1 className="text-3xl md:text-5xl font-bold text-center">#FurniroFurnitures</h1>
 
       {/* Parent container for the gallery */}
-      <div className="relative  h-[850px] w-full mt-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 p-4">
         {/* Image 1 */}
-        <div className="absolute -left-[15%] -ml-[200] top-[0]">
+        <div className="w-[260px]  left-[40] bg-black h-auto">
           <img
             src="g1.jpg"
             alt="img1"
-            className="w-[340px] h-[360px] -ml-[200] transition-transform duration-300 hover:scale-105"
+            className="w-[260px] h-auto transition-transform  duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 2 */}
-        <div className="absolute left-[11.7%] top-[100px]">
+        <div className="w-full h-auto">
           <img
             src="g2.jpg"
             alt="img2"
-            className="w-[330px] h-[260px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 3 */}
-        <div className="absolute left-[37.4%] top-[160px]">
+        <div className="w-full h-auto">
           <img
             src="g3.jpg"
             alt="img3"
-            className="w-[300px] h-[390px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 4 */}
-        <div className="absolute left-[60.8%] top-[90px]">
+        <div className="w-full h-auto">
           <img
             src="g4.jpg"
             alt="img4"
-            className="w-[250px] h-[350px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 5 */}
-        <div className="absolute left-[80.9%] top-[10px]">
+        <div className="w-full h-auto">
           <img
             src="g5.jpg"
             alt="img5"
-            className="w-[260px] h-[430px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 6 */}
-        <div className="absolute left-[%] top-[380px]">
+        <div className="w-full h-auto">
           <img
             src="g6.jpg"
             alt="img6"
-            className="w-[200px] h-[400px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 7 */}
-        <div className="absolute left-[16%] top-[380px]">
+        <div className="w-full h-auto">
           <img
             src="g7.jpg"
             alt="img7"
-            className="w-[270px] h-[220px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 8 */}
-        <div className="absolute left-[60.9%] top-[460px]">
+        <div className="w-full h-auto">
           <img
             src="g8.jpg"
             alt="img8"
-            className="w-[170px] h-[230px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
 
         {/* Image 9 */}
-        <div className="absolute left-[75%] top-[460px]">
+        <div className="w-full h-auto">
           <img
             src="g9.jpg"
             alt="img9"
-            className="w-[260px] h-[180px] transition-transform duration-300 hover:scale-105"
+            className="w-full h-auto transition-transform duration-300 hover:scale-105"
           />
         </div>
       </div>

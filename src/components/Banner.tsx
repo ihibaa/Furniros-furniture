@@ -9,28 +9,36 @@ const Banner = () => {
   return (
     <div className="p-0 m-0 w-full">
      
-      <div className="relative w-full h-auto bg-white overflow-hidden">
-        <div className="absolute inset-0 flex flex-col justify-center items-center px-6 sm:px-10 md:items-end md:px-12 gap-5 z-10">
-          <div className="flex flex-col gap-3 bg-yellow-50 text-brown p-4 sm:p-6 md:p-8 rounded-none">
-            <h2 className="text-black font-bold text-lg sm:text-xl md:text-2xl text-center md:text-left">
-              New Arrivals
-            </h2>
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center md:text-left">
-              Discover Our
-            </h1>
-            <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-center md:text-left">
-              New Collection
-            </h1>
-            <p className="text-sm sm:text-base md:text-lg text-black text-center md:text-left">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit</p> 
-              <p className="text-sm sm:text-base md:text-lg text-black text-center md:text-left"> Nostrum similique dolorum, dolorem magnam dignissimos.</p>
-            
-            <Button className="w-36 sm:w-48 py-2 sm:py-3 text-sm sm:text-lg mt-4 bg-brown text-white hover:bg-yellow-50 hover:text-brown rounded-none">
-              
-              <Link href="/shop" className="opacity-75"> Buy Now</Link> 
-        
-            </Button>
-          </div>
+     <div className="relative w-full h-auto bg-white overflow-hidden">
+  <div className="absolute inset-0 flex flex-col justify-center items-center px-4 sm:px-10 md:items-end md:px-12 gap-3 sm:gap-5 z-10">
+    {/* Content Container */}
+    <div className="flex flex-col gap-2 sm:gap-3 bg-yellow-50 text-brown p-4 sm:p-6 md:p-8 rounded-none w-full max-w-md md:max-w-lg">
+      {/* Heading */}
+      <h2 className="text-black font-bold text-base sm:text-lg md:text-xl text-center md:text-left">
+        New Arrivals
+      </h2>
+      {/* Main Title */}
+      <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center md:text-left">
+        Discover Our
+      </h1>
+      <h1 className="text-xl sm:text-2xl md:text-4xl font-bold text-center md:text-left">
+        New Collection
+      </h1>
+      {/* Description */}
+      <p className="text-xs sm:text-sm md:text-base text-black text-center md:text-left">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+      </p>
+      <p className="text-xs sm:text-sm md:text-base text-black text-center md:text-left">
+        Nostrum similique dolorum, dolorem magnam dignissimos.
+      </p>
+      {/* Button */}
+      <Button className="w-32 sm:w-36 py-2 sm:py-3 text-xs sm:text-sm md:text-base mt-3 sm:mt-4 bg-brown text-white hover:bg-yellow-50 hover:text-brown rounded-none">
+        <Link href="/shop" className="opacity-75">
+          Buy Now
+        </Link>
+      </Button>
+    </div>
+  
         </div>
 
        
